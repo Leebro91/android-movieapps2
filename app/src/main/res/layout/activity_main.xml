@@ -69,15 +69,17 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/likeButton"
                         android:layout_width="30dp"
                         android:layout_height="25dp"
                         android:layout_marginTop="15dp"
                         android:layout_marginBottom="5dp"
-                        android:background="@drawable/ic_thumb_up"
+                        android:background="@drawable/thumbs_up_selector"
                         app:backgroundTint="?android:attr/panelBackground"
                         app:backgroundTintMode="add" />
 
                     <TextView
+                        android:id="@+id/likeCountView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -88,16 +90,18 @@
                         android:textStyle="bold" />
 
                     <Button
+                        android:id="@+id/likeButton2"
                         android:layout_width="30dp"
                         android:layout_height="25dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="15dp"
                         android:layout_marginBottom="5dp"
-                        android:background="@drawable/ic_thumb_down"
+                        android:background="@drawable/thumbs_down_selector"
                         app:backgroundTint="?android:attr/panelBackground"
                         app:backgroundTintMode="add" />
 
                     <TextView
+                        android:id="@+id/likeCountView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -322,54 +326,72 @@
 
         </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:background="#FFFFFF">
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            >
 
-            <TextView
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="5dp"
-                android:text="@string/한줄평"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_alignParentRight="true">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="48dp"
-                    android:src="@drawable/ic_review_selected" />
-
-                <Button
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/linear_border_orange"
-                    android:text="작성하기"
-                    android:textColor="#F44336"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/한줄평"
+                    android:textColor="@color/black"
                     android:textSize="18dp"
-                    android:textStyle="bold"
-                    app:backgroundTint="?android:attr/panelBackground"
-                    app:backgroundTintMode="add" />
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/writeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentRight="true">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_review_selected" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/linear_border_orange"
+                        android:text="작성하기"
+                        android:textColor="#F44336"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        app:backgroundTint="?android:attr/panelBackground"
+                        app:backgroundTintMode="add" />
+
+                </LinearLayout>
 
 
-            </LinearLayout>
+            </RelativeLayout>
+
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
             <Button
+                android:id="@+id/allViewButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginBottom="25dp"
                 android:background="@drawable/linear_border_puple"
                 android:gravity="center"
@@ -381,7 +403,7 @@
                 app:backgroundTintMode="add"
                 />
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
